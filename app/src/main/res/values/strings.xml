@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">WiFi setup service</string>
+    <string name="about">этот сервис при появлении точки доступа с именем RedmiTer и парглем xtyhfde467 подключит устройство к ней. После отключения переключит на прежную точку доступа</string>
+    <string name="start_scan">Start Scan</string>
+    <string name="stop_scan">Stop Scan</string>
+    <string name="requesting_location_access">Requesting location access</string>
+    <string name="do_you_want_to_open_location_settings">Do you want to open Location settings to enable location services? Without WiFi Access Points will not be detected.</string>
+    <string name="timer_stop">Timer Stop</string>
+</resources>
