@@ -11,7 +11,9 @@ public class MyBootReceiver extends WakefulBroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // Запускаем указанную службу при получении этого сообщения
         Intent i = new Intent(context, MyIntentService.class);
-        i.putExtra("type", 1).putExtra("time", 0).putExtra("task", "Загрузим кота");
+        i.putExtra("type", MyIntentService.BOOT)
+         .putExtra("time", 0)
+         .putExtra("task", "Загрузим кота");
         startWakefulService(context, i);
     }
 }

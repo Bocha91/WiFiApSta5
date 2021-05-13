@@ -14,6 +14,12 @@ import android.widget.Toast;
 
 import static android.os.SystemClock.elapsedRealtime;
 /*
+Этот серви с
+
+
+
+
+
 RedmiTer
 xtyhfde467
 
@@ -27,6 +33,13 @@ xtyhfde467
  * TODO: Customize class - update intent actions and extra parameters.
  */
 public class MyIntentService extends IntentService {
+
+    public static final int BOOT   = 1;
+    public static final int BUTTON = 2;
+    public static final int TIME   = 3;
+    public static final int SCAN   = 4;
+
+
     private final String TAG = "MyLogsS";
     // TODO: Rename actions, choose action names that describe tasks that this
     // IntentService can perform, e.g. ACTION_FETCH_NEW_ITEMS
@@ -94,17 +107,17 @@ public class MyIntentService extends IntentService {
 
         switch(type)
         {
-            case 1: // BOOT
+            case BOOT: // BOOT
                 // снять блокировку пробуждения, чтобы после завершения сервиса система могла заснуть
                 WakefulBroadcastReceiver.completeWakefulIntent(intent);
                 break;
-            case 2: //BUTTON
+            case BUTTON: //BUTTON
                 success = wifiManager.startScan();
                 break;
-            case 3: // TIME
+            case TIME: // TIME
                 success = wifiManager.startScan();
                 break;
-            case 4: // SCAN
+            case SCAN: // SCAN
                 if (success) {
                     scanSuccess();
                 } else {

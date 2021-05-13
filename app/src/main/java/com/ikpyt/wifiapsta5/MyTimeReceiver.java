@@ -13,7 +13,9 @@ public class MyTimeReceiver extends BroadcastReceiver {
     public void onReceive (Context context, Intent intent){
         Intent i = new Intent(context, MyIntentService.class);
         //i.putExtra("foo", "bar");
-        i.putExtra("type", 3).putExtra("time", 7).putExtra("task", "Разбудить кота");
+        i.putExtra("type", MyIntentService.TIME)
+         .putExtra("time", 7)
+         .putExtra("task", "Разбудить кота");
         context.startService(i);
     }
 }

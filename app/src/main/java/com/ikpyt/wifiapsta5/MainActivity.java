@@ -66,8 +66,9 @@ public class MainActivity extends AppCompatActivity {
                     // Запускаем свой IntentService
                     mMyServiceIntent = new Intent(MainActivity.this, MyIntentService.class);
                     //                                      time и task это имена передаваемых параметров, их значения в поле value
-                    startService(mMyServiceIntent.putExtra("type", 2).putExtra("time", 3).putExtra("task", "Погладить кота"));
-
+                    startService(mMyServiceIntent.putExtra("type", MyIntentService.BUTTON)
+                                                 .putExtra("time", 3)
+                                                 .putExtra("task", "Погладить кота"));
                 } else {
                     button.setText(R.string.start_scan);
                     knop = false;
@@ -178,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //----------------------------------------------------------------------------------------------
-    // настраиваем повторяющийся будильник на каждые 15 секунд который будеи запускать наш сервис MyIntentService
+    // настраиваем повторяющийся будильник на каждые 15 секунд который запустит наш сервис MyIntentService
     public void scheduleAlarm() {
         // Создаем намерение, которое будет выполнять AlarmReceiver
         Intent intent = new Intent(getApplicationContext(), MyTimeReceiver.class);
